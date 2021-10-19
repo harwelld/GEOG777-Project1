@@ -88,6 +88,7 @@ $(document).ready(function() {
                         $("#glr-result").show();
                         legend.remove();
                         if ($('.newLegend')) { $('.newLegend').remove(); }
+                        if (map.hasLayer(resultLyr)) { map.removeLayer(resultLyr); }
                         resultLyr.addTo(map);
                         var newLegend = buildLegend([wellLocationsLyr, cancerTractsLyr, resultLyr]);
                         newLegend.addTo(map);
