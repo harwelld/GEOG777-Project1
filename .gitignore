@@ -1,0 +1,7 @@
+venv/
+.vscode/
+.env
+*.pyc
+__pycache__/
+*.gdb
+*.zip

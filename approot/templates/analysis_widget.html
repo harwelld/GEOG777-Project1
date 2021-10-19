@@ -1,0 +1,14 @@
+<div id="analysis-widget">
+    <p>
+        <strong>Nitrate & Cancer Analysis</strong><br><br>
+        Perform Inverse Distance Weighted spatial-autocorrelation to predict nitrate
+        levels accross the state, find the average predicted nitrate concentration in 
+        each census tract, then perform linear regression analysis to model the 
+        relationship between nitrate levels in groundwater and cancer rates in census
+        tracts in the state of Wisconsin.
+    </p>
+    <input id="decay-coefficient" class="widget leaflet-bar" type="number" placeholder="IDW Decay Coefficient" required>
+    <p id="error" hidden>Decay coefficient must be between 1 and 8.</p>
+    <button id="run-analysis" class="widget leaflet-bar">Run Analysis</button>
+    <a href="/glr-result" id="glr-result" class="widget leaflet-bar" target="_blank">View GLR Result</a>
+</div>

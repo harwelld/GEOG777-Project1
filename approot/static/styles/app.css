@@ -1,0 +1,48 @@
+body { margin: 0; padding: 0; }
+
+#map {
+	position: absolute;
+	top: 0; bottom: 0; right: 0; left: 0;
+}
+
+#analysis-widget {
+	display: grid;
+	grid-template-columns: 200px;
+	background-color: #fff;
+	padding: 6px;
+}
+
+#analysis-widget p { margin: 5px; }
+
+.widget { margin: 5px; }
+
+#decay-coefficient { height: 32px; }
+
+#run-analysis { height: 32px; }
+
+#glr-result {
+	color: #0078A8 !important;
+	border: 2px solid rgba(0,0,0,0.2);
+	border-radius: 4px;
+	width: 93%;
+}
+
+#error { color: red; }
+
+/* Loading gif visible when body element has the loading class */
+.overlay{
+	display: none;
+	text-align: center;
+	top: 100px;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: rgba(255, 255, 255, 0.6) url("/static/img/Globe.gif") center no-repeat;
+}
+
+body.loading .overlay{
+	display: block;
+}

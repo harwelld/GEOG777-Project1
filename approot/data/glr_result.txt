@@ -1,0 +1,33 @@
+Start Time: Monday, October 18, 2021 9:42:28 PM
+
+------------------- Summary of GLR Results [Model Type: Continuous (Gaussian/OLS)] -------------------
+------------------------------------------------------------------------------------------------------
+              Variable Coefficient [a] StdError t-Statistic Probability [b] Robust_SE  Robust_t Robust_Pr [b]
+             Intercept        0.071501 0.005813   12.301103       0.000000*  0.005542 12.901019     0.000000*
+ZONAL_STATS_TABLE.MEAN        0.006193 0.001126    5.500652       0.000000*  0.001385  4.471933     0.000011*
+------------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------- GLR Diagnostics ------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+Input Features:              cancer_tracts_prj_Layer1   Dependent Variable:                          CANCER_TRACTS_PRJ.CANRATE 
+Number of Observations:                          1401   Akaike's Information Criterion (AICc) [d]:                -1444.858562 
+Multiple R-Squared [d]:                      0.021170   Adjusted R-Squared [d]:                                       0.020470 
+Joint F-Statistic [e]:                      30.257170   Prob(>F), (1,1399) degrees of freedom:                        0.000000*
+Joint Wald Statistic [e]:                   19.998187   Prob(>chi-squared), (1) degrees of freedom:                   0.000008*
+Koenker (BP) Statistic [f]:                 22.619392   Prob(>chi-squared), (1) degrees of freedom:                   0.000002*
+Jarque-Bera Statistic [g]:                4203.297186   Prob(>chi-squared), (2) degrees of freedom:                   0.000000*
+----------------------------------------------------------------------------------------------------------------------------
+
+
+Notes on Interpretation
+ *  An asterisk next to a number indicates a statistically significant p-value (p < 0.01).                                                                                                                                                                                                                                                                
+[a] Coefficient: Represents the strength and type of relationship between each explanatory variable and the dependent variable.                                                                                                                                                                                                                           
+[b] Probability and Robust Probability (Robust_Pr): Asterisk (*) indicates a coefficient is statistically significant (p < 0.01); if the Koenker (BP) Statistic [f] is statistically significant, use the Robust Probability column (Robust_Pr) to determine coefficient significance.                                                                    
+[c] Variance Inflation Factor (VIF): Large Variance Inflation Factor (VIF) values (> 7.5) indicate redundancy among explanatory variables.                                                                                                                                                                                                                
+[d] R-Squared and Akaike's Information Criterion (AICc): Measures of model fit/performance.                                                                                                                                                                                                                                                               
+[e] Joint F and Wald Statistics: Asterisk (*) indicates overall model significance (p < 0.01); if the Koenker (BP) Statistic [f] is statistically significant, use the Wald Statistic to determine overall model significance.                                                                                                                            
+[f] Koenker (BP) Statistic: When this test is statistically significant (p < 0.01), the relationships modeled are not consistent (either due to non-stationarity or heteroskedasticity).  You should rely on the Robust Probabilities (Robust_Pr) to determine coefficient significance and on the Wald Statistic to determine overall model significance.
+[g] Jarque-Bera Statistic: When this test is statistically significant (p < 0.01) model predictions are biased (the residuals are not normally distributed).                                                                                                                                                                                              
+
+Succeeded at Monday, October 18, 2021 9:42:30 PM (Elapsed Time: 2.33 seconds)

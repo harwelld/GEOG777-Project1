@@ -1,0 +1,20 @@
+{
+  "name": "leaflet-control-accordionlegend",
+  "version": "1.2.4",
+  "description": "an attractive accordion legend for Leaflet",
+  "main": "L.Control.AccordionLegend.js",
+  "style": "L.Control.AccordionLegend.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreenInfo-Network/L.Control.AccordionLegend.git"
+  },
+  "author": "GreenInfo Network <gin@greeninfo.org> (http://www.greeninfo.org/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GreenInfo-Network/L.Control.AccordionLegend/issues"
+  },
+  "homepage": "https://github.com/GreenInfo-Network/L.Control.AccordionLegend"
+}
