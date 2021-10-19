@@ -85,7 +85,6 @@ $(document).ready(function() {
                 data: {'decay-coefficient': decay_coefficient},
                 success: function(response) {
                     if (response['gp-result'] === 'success'){
-                        //alert('Done with geoprocessing');
                         $("#glr-result").show();
                         legend.remove();
                         if ($('.newLegend')) { $('.newLegend').remove(); }
@@ -100,7 +99,7 @@ $(document).ready(function() {
                         $('input[type="checkbox"][value="Standardized Residual"]').prop('checked', true);
                         // AccordionLegend plugin is BUGGY! Had to hack around with it :)
                     } else {
-                        alert('Unknown geoprocessing error');
+                        alert('An unknown geoprocessing error occured');
                     }
                 },
                 error: function(response) {
@@ -173,19 +172,19 @@ function resultStyle(feature) {
 
 function getResultColor(std_residual) {
     if (std_residual <= -2.5) {
-        return '#2D004B';
+        return '#01665E';
     } else if (std_residual > -2.5 && std_residual <= -1.5) {
-        return '#715AA0';
+        return '#5AB4AC';
     } else if (std_residual > -1.5 && std_residual <= -0.5) {
-        return '#BFBBDA';
+        return '#C7EAE5';
     } else if (std_residual > -0.5 && std_residual <= 0.5) {
         return '#F7F7F7';
     } else if (std_residual > 0.5 && std_residual <= 1.5) {
-        return '#C7EAE5';
+        return '#BFBBDA';
     } else if (std_residual > 1.5 && std_residual <= 2.5) {
-        return '#5AB4AC';
+        return '#715AA0';
     } else {
-        return '#01665E';
+        return '#2D004B';
     }
 }
 
