@@ -88,11 +88,13 @@ $(document).ready(function() {
                         //alert('Done with geoprocessing');
                         $("#glr-result").show();
                         legend.remove();
+                        if ($('.newLegend')) { $('.newLegend').remove(); }
                         resultLyr.addTo(map);
-                        newLegend = buildLegend([wellLocationsLyr, cancerTractsLyr, resultLyr]);
+                        var newLegend = buildLegend([wellLocationsLyr, cancerTractsLyr, resultLyr]);
                         newLegend.addTo(map);
                         newLegend.toggleLayer('Nitrate Level (PPM)', false);
                         newLegend.toggleLayer('Cancer Rate (%)', false);
+                        $('.leaflet-control-accordionlegend').addClass('newLegend');
                         $('.accordionlegend-section').removeClass('accordionlegend-section-hidden');
                         $('.accordionlegend-legend').removeClass('accordionlegend-legend-hidden');
                         $('input[type="checkbox"][value="Standardized Residual"]').prop('checked', true);
