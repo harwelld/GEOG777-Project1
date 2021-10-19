@@ -222,62 +222,66 @@ function buildLegend(layers) {
 
 // Build legend object for accordion legend plugin
 function legendContent(wells, tracts, result=undefined) {
-    var content = 
-    [
-        {
-            'title': 'Well Locations',
-            layers: [
-                {
-                    'title': 'Nitrate Level (PPM)',
-                    'layer': wells,
-                    'opacityslider': false,
-                    'legend': [
-                        { 'type':'circle', 'color':'#FEF0D9', 'text':'< 2' },
-                        { 'type':'circle', 'color':'#FDCC8A', 'text':'2 - 5' },
-                        { 'type':'circle', 'color':'#E34A33', 'text':'5 - 10' },
-                        { 'type':'circle', 'color':'#B30000', 'text':'> 10' }
-                    ]
-                }
-            ]
-        },
-        {
-            'title': 'Census Tracts',
-            layers: [
-                {
-                    'title': 'Cancer Rate (%)',
-                    'layer': tracts,
-                    'opacityslider': false,
-                    'legend': [
-                        { 'type':'square', 'color':'#EDF8FB', 'text':'< 5' },
-                        { 'type':'square', 'color':'#B3CDE3', 'text':'5 - 15' },
-                        { 'type':'square', 'color':'#8C96C6', 'text':'15 - 30' },
-                        { 'type':'square', 'color':'#8856A7', 'text':'30 - 50' },
-                        { 'type':'square', 'color':'#810F7C', 'text':'> 50' }
-                    ]
-                }
-            ]
-        }
-    ]
+    var legend_content = [];
+    var well_content = {
+        'title': 'Well Locations',
+        layers: [
+            {
+                'title': 'Nitrate Level (PPM)',
+                'layer': wells,
+                'opacityslider': false,
+                'legend': [
+                    { 'type':'circle', 'color':'#FEF0D9', 'text':'< 2' },
+                    { 'type':'circle', 'color':'#FDCC8A', 'text':'2 - 5' },
+                    { 'type':'circle', 'color':'#E34A33', 'text':'5 - 10' },
+                    { 'type':'circle', 'color':'#B30000', 'text':'> 10' }
+                ]
+            }
+        ]
+    };
+    var tracts_content = {
+        'title': 'Census Tracts',
+        layers: [
+            {
+                'title': 'Cancer Rate (%)',
+                'layer': tracts,
+                'opacityslider': false,
+                'legend': [
+                    { 'type':'square', 'color':'#EDF8FB', 'text':'< 5' },
+                    { 'type':'square', 'color':'#B3CDE3', 'text':'5 - 15' },
+                    { 'type':'square', 'color':'#8C96C6', 'text':'15 - 30' },
+                    { 'type':'square', 'color':'#8856A7', 'text':'30 - 50' },
+                    { 'type':'square', 'color':'#810F7C', 'text':'> 50' }
+                ]
+            }
+        ]
+    };
+    var result_content = {
+        'title': 'Analysis Result',
+        layers: [
+            {
+                'title': 'Standardized Residual',
+                'layer': result,
+                'opacityslider': false,
+                'legend': [
+                    { 'type':'square', 'color':'#2D004B', 'text':'< -2.5' },
+                    { 'type':'square', 'color':'#715AA0', 'text':'-2.5 - -1.5' },
+                    { 'type':'square', 'color':'#BFBBDA', 'text':'-1.5 - -0.5' },
+                    { 'type':'square', 'color':'#F7F7F7', 'text':'-0.5 - 0.5' },
+                    { 'type':'square', 'color':'#C7EAE5', 'text':'0.5 - 1.5' },
+                    { 'type':'square', 'color':'#5AB4AC', 'text':'1.5 - 2.5' },
+                    { 'type':'square', 'color':'#01665E', 'text':'> 2.5' }
+                ]
+            }
+        ]
+    };
     if (result != undefined) {
-        content.push({
-            'title': 'Analysis Result',
-            layers: [
-                {
-                    'title': 'Standardized Residual',
-                    'layer': result,
-                    'opacityslider': false,
-                    'legend': [
-                        { 'type':'square', 'color':'#2D004B', 'text':'< -2.5' },
-                        { 'type':'square', 'color':'#715AA0', 'text':'-2.5 - -1.5' },
-                        { 'type':'square', 'color':'#BFBBDA', 'text':'-1.5 - -0.5' },
-                        { 'type':'square', 'color':'#F7F7F7', 'text':'-0.5 - 0.5' },
-                        { 'type':'square', 'color':'#C7EAE5', 'text':'0.5 - 1.5' },
-                        { 'type':'square', 'color':'#5AB4AC', 'text':'1.5 - 2.5' },
-                        { 'type':'square', 'color':'#01665E', 'text':'> 2.5' }
-                    ]
-                }
-            ]
-        });
+        legend_content.push(well_content);
+        legend_content.push(result_content);
+        legend_content.push(tracts_content);
+    } else {
+        legend_content.push(well_content);
+        legend_content.push(tracts_content);
     }
-    return content;
+    return legend_content;
 }
