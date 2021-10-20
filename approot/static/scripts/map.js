@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     // Cancer tract popup
     cancerTractsLyr.bindPopup(function(layer) {
-        return L.Util.template('<h3>Cancer Cate: {canrate}</h3>', layer.feature.properties);
+        return L.Util.template('<h3>Cancer Rate: {canrate}</h3>', layer.feature.properties);
     });
 
     // Add Nitrate Wells hosted feature service
